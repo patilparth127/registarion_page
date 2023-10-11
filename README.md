@@ -1,3 +1,10 @@
+Install Node Modules:
+To add Angular's Node modules (dependencies) to your project, run the following command:
+
+npm install
+
+This command reads the package.json file in your project directory and installs all the dependencies listed in it.
+
 Introduction -:
 In our Angular User Registration Form project, we've successfully crafted an intuitive and user-friendly registration experience. This vital component is designed to cater to user onboarding, ensuring the collection of essential personal information. By harnessing the power of Angular, we've established a robust foundation for form handling and validation, promoting data accuracy and enhancing the overall user experience.
 
