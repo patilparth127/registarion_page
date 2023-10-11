@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-content><div class="container">
+        <h2>User Registration Form</h2>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div fxLayout="row" fxLayout.xs="column">
+
+            <mat-form-field class="example-full-width custom-width">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="" formControlName="firstName">
+                <mat-error *ngIf="registrationForm.get('firstName')?.hasError('required')">First Name is
+                    required</mat-error>
+            </mat-form-field><br>
+    
+            <mat-form-field class="example-full-width custom-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="" formControlName="lastName">
+                <mat-error *ngIf="registrationForm.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+            </mat-form-field><br>
+    
+            <mat-form-field class="example-full-width custom-width">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="" formControlName="email">
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+            </mat-form-field><br>
+    
+            <mat-form-field class="example-full-width custom-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="" formControlName="password">
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('passwordWeak')">Password must be at least 8
+                    characters long and contain special characters</mat-error>
+            </mat-form-field><br>
+    
+            <mat-form-field class="example-full-width custom-width">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="" formControlName="confirmPassword">
+                <mat-error *ngIf="registrationForm.hasError('passwordMismatch')">Password and Confirm Password do not
+                    match.</mat-error>
+            </mat-form-field><br>
+    
+            <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Submit</button>
+        </div> </form>
+    </div></mat-card-content>
+  </mat-card>
